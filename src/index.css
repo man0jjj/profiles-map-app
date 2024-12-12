@@ -1,13 +1,88 @@
-body {
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* General Body Styling */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Container */
+.container {
+  padding: 10px;
+}
+
+/* Responsive Admin Panel & Profiles */
+.admin-panel, .profile-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* Buttons */
+button {
+  margin: 5px;
+  padding: 8px 12px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .admin-panel, .profile-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  button {
+    width: 80%;
+  }
+
+  input {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  button {
+    width: 100%;
+  }
+
+  input {
+    width: 100%;
+  }
+}
+.admin-panel {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.add-profile {
+  margin-top: 20px;
+}
+
+.profile-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.error {
+  color: red;
+  margin-top: 10px;
+  font-size: 0.9em;
 }

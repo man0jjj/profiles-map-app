@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import AdminPanel from './AdminPanel';
+import LoginPage from './LoginPage';
+import MapComponent from './MapComponent';
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false); // Authentication state
+  const [selectedProfile, setSelectedProfile] = useState(null);
+
+  const handleLogin = () => {
+    setIsAuthenticated(true);
+  };
+
+  const handleLogout = () => {
+    setIsAuthenticated(false);
+  };
+
+  const handleProfileSelect = (profile) => {
+    setSelectedProfile(profile);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {!isAuthenticated ? (
+        <LoginPage onLogin={handleLogin} />
+      ) : (
+        <div>
+          <button onClick={handleLogout}>Logout</button>
+          <AdminPanel onProfileSelect={handleProfileSelect} />
+          {selectedProfile && <MapComponent profile={selectedProfile} />}
+        </div>
+      )}
     </div>
   );
 }
 
 export default App;
+
+
+
+
+

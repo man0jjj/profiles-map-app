@@ -1,0 +1,24 @@
+.admin-panel {
+    padding: 20px;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    margin: 20px 0;
+    border-radius: 5px;
+  }
+  
+  .profile-list {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  
+  .profile-card {
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    text-align: center;
+    width: 200px;
+  }
+  
